@@ -1,5 +1,7 @@
 <script setup>
     import myHeader from '@/components/myHeader.vue'
+    import asideNav from '@/components/asideNav.vue'
+
 </script>
 
 <template>
