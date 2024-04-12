@@ -14,7 +14,7 @@ export default {
 #header {
   background-color: #545c64;
   color: #fff;
-  padding: 10px;
+  padding: 2%;
   text-align: center;
   
 }
