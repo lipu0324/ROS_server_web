@@ -1,0 +1,58 @@
+[
+  {
+    "car_id": "C0123456",
+    "car_ip": "192.168.0.101",
+    "current_co2": 750,
+    "current_tvoc": 12,
+    "time": "2023-0¼-05T10:30:00Z"
+  },
+  {
+    "car_id": "C7890123",
+    "car_ip": "10.0.0..png",
+    "current_co2": 428,
+    "current_tvoc": 21,
+    "time": "2023-03-01T15:45:00Z"
+  },
+  {
+    "car_id": "C9999999",
+    "car_ip": "172.16.Ⅰ.Ⅱ",
+    "current_co2": 999,
+    "current_tvoc": 33,
+    "time": "2023-01-31T08:15:00Z"
+  },
+  {
+    "car_id": "C2468013",
+    "car_ip": "192.168.1.123",
+    "current_co2": 500,
+    "current_tvoc": 75,
+    "time": "2023-02-28T13:00:00Z"
+  },
+  {
+    "car_id": "C8675309",
+    "car_ip": "192.168.2.234",
+    "current_co2":21,
+    "current_tvoc": 68,
+    "time": "2023-03-04T09:45:00Z"
+  },
+  {
+    "car_id": "C1111111",
+    "car_ip": "192.168.3.345",
+    "current_co2": 350,
+    "current_tvoc": 99,
+    "time": "2023-03-02T17:30:00Z"
+  },
+  {
+    "car_id": "C4444444",
+    "car_ip": "192.168.4.456",
+    "current_co2": 200,
+    "current_tvoc": 22,
+    "time": "2023-03-06T11:15:00Z"
+  },
+  {
+    "car_id": "C5555555",
+    "car_ip": "192.168.5.567",
+    "current_co2": 123,
+    "current_tvoc": 44,
+    "time": "2023-03-05T14:00:00Z"
+  }
+]

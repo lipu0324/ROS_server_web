@@ -1,7 +1,7 @@
 
 
 <template>
-  <div>
+  <div class = "car-info">
   <el-card
   :body-style="{ padding: '10px' ,backgroundColor:'#7f7f7f'}"
   :border-radius="10"
@@ -15,7 +15,7 @@
 	<p class = "text item">车辆VPNIP地址:{{CarIp}}</p>
 	<p class = "text item">实时CO2浓度:{{CO2}}</p>
 	<p class = "text item">实时TVOC浓度:{{TVOC}}</p>
-	<template #footer>最后更新时间:{{Time}}</template>
+	<p class = "text item">最后更新时间:{{Time}}</p>
   </el-card>
   </div>
 </template>
@@ -41,5 +41,8 @@ export  default {
 </script>
 
 <style scoped>
-
+.car-info{
+  display: grid;
+  grid-gap: 16px;
+}
 </style>
