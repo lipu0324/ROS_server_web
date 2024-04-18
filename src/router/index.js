@@ -16,6 +16,11 @@ const routes = [
         path:'/CarSettingsView',
         name:'CarSettingsView',
         component:()=>import('../views/CarSettingView.vue')
+      },
+      {
+        path:'DataView',
+        name:'DataView',
+        component:()=>import('../views/DataView.vue')
       }
     ]
   },
