@@ -11,6 +11,11 @@ const routes = [
         path: 'CarView',
         name: 'CarView',
         component: () => import('../views/CarView.vue')
+      },
+      {
+        path:'/CarSettingsView',
+        name:'CarSettingsView',
+        component:()=>import('../views/CarSettingView.vue')
       }
     ]
   },
@@ -22,11 +27,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
-  {
-    path:'/CarSettingsView',
-    name:'CarSettingsView',
-    component:()=>import('../views/CarSettingView.vue')
-  }
 ]
 
 const router = createRouter({

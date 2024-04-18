@@ -16,6 +16,7 @@
 	<p class = "text item">实时CO2浓度:{{CO2}}</p>
 	<p class = "text item">实时TVOC浓度:{{TVOC}}</p>
 	<p class = "text item">最后更新时间:{{Time}}</p>
+
   </el-card>
   </div>
 </template>
