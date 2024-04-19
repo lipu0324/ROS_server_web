@@ -1,5 +1,28 @@
 <script setup>
 import {ElForm, ElFormItem, ElInput, ElButton, ElDatePicker} from "element-plus";
+import {onMounted, ref} from "vue";
+import axios from "axios";
+import settings from '@/settings.json'
+const serverURL = settings.serverURL
+// 创建一个名为form 的ref数组
+const form = ref({
+  car_id: "",
+  timeRange: [],
+  CarAddress: "",
+})
+const DataResult = ref([])
+function onSubmit(form) {
+	const data = {
+	  "start_time" : form.timeRange[0],
+	  "end_time" : form.timeRange[1],
+	  "car_id" : form.car_id,
+	  "CarAddress" : form.CarAddress,
+	}
+	axios.post(serverURL + "/api/get_history_data/", data).then(function (response) {
+
+	})
+}
+
 </script>
 
 <template>
@@ -19,9 +42,18 @@ import {ElForm, ElFormItem, ElInput, ElButton, ElDatePicker} from "element-plus"
 	  <el-input v-model="form.CarAddress" placeholder="请输入位置"></el-input>
 	</el-form-item>
 	<el-form-item>
-	  <el-button type="primary" @click="onSubmit">查询</el-button>
+	  <el-button type="primary" @click="onSubmit(form)">查询</el-button>
 	</el-form-item>
   </el-form>
+  <el-container>
+	<el-table :data="DataResult" border style="width: 80%" stripe>
+	  <el-table-column prop = "car_id" label = "车辆ID" width = "180"/>
+	  <el-table-column prop = "co2" label = "CO2数据" width = "180"/>
+	  <el-table-column prop = "TVOC" label = "TVOC数据" width = "180"/>
+	  <el-table-column prop = "location" label = "地址" width = "180"/>
+	  <el-table-column prop = "time" label = "时间" width = "180"/>
+	</el-table>
+  </el-container>
 </template>
 
 <style scoped>
