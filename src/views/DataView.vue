@@ -38,7 +38,7 @@ function onSubmit(form) {
 					  end-placeholder="结束日期"
 	  ></el-date-picker>
 	</el-form-item>
-	<el-form-item label=”位置”>
+	<el-form-item label=位置>
 	  <el-input v-model="form.CarAddress" placeholder="请输入位置"></el-input>
 	</el-form-item>
 	<el-form-item>

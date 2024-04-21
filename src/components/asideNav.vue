@@ -21,7 +21,7 @@
 			车辆设置
 	  </el-menu-item>
 	  </RouterLink>
-	  <RouterLink to="/settings" class="custom-link">
+	  <RouterLink to="DataView" class="custom-link">
 		<el-menu-item index="3" class="custom-link" >
 		  <i class="el-icon-setting"></i>
 		  系统设置

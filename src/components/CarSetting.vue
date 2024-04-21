@@ -14,7 +14,7 @@ const props = defineProps({
 })
 
 function deletefunc(backendURL,CarId){
-    let apiURL = backendURL + "/deleteCar" + "?CarId=" + CarId;
+    let apiURL = backendURL + "/api/deleteCar" + "?CarId=" + CarId;
   	ElMessageBox.confirm(
 		  '你确定要删除这辆车吗，删除后车辆将无法上传数据到服务器，现有数据将无法查询',
 		'Warning',
@@ -40,6 +40,7 @@ function deletefunc(backendURL,CarId){
 			message: '已取消删除',
 		  })
 		})
+
 }
 </script>
 

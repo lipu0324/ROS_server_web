@@ -9,15 +9,18 @@ const fetched = ref(null);
 const CarID = ref(null);
 const CarIP = ref(null);
 onMounted (() => {
+  refresh()
+})
+function refresh() {
   axios.get(serverWeb+'/api/get_car_info').then(response => {
 	fetched.value = response.data;
   }).catch(error => {
 	console.log(error);
   });
-})
+}
 
 function RegistCar() {
-	  // 判断输入是否为空
+	  // 用来添加车辆的函数
   console.log("点击了")
   console.log(CarID,CarIP)
   if(CarID.value == null || CarIP.value == null){
@@ -26,13 +29,14 @@ function RegistCar() {
   else {
 	axios.post(serverWeb + '/api/regist_car', {carID: CarID.value, carIP: CarIP.value}).then((response) => {
 	  const statusCode = response.status;
-	  if (statusCode === 200) {
+	  if ("success" in response.data) {
 		ElMessage("车辆添加成功")
-	  } else if (statusCode !== 200) {
-		ElMessage("车辆添加失败")
+	  } else  {
+		ElMessage(response.data["error"])
+		console.log(response.data["error"]);
 	  }
 	}).catch((error) => {
-	  ElMessage("车辆添加失败");
+	  ElMessage(error);
 	});
   }
 }
@@ -53,6 +57,7 @@ function RegistCar() {
 	  v-model="CarIP"
 	  placeholder="请输入车辆IP"/>
 	  <el-button @click="RegistCar" type="primary">提交</el-button>
+	  <el-button @click="refresh" type="primary">刷新</el-button>
   </el-form>
 	<p></p>
   </el-container>
