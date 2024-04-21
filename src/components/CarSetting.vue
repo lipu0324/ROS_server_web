@@ -65,9 +65,10 @@ function deletefunc(backendURL,CarId){
 </template>
 
 <style scoped>
-.car-info{
-  display: grid;
-  grid-gap: 16px;
+.car-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 </style>

@@ -6,16 +6,17 @@
   :body-style="{ padding: '10px' ,backgroundColor:'#7f7f7f'}"
   :border-radius="10"
   :shadow="hover"
+  :style="{border : '3px soild black'}"
   >
 	<template #header>
-		<div class = "card-header">
+		<div class = "el-card__header" >
 		 <span>车辆ID: {{CarId}}</span>
 		</div>
 	</template>
 	<p class = "text item">车辆VPNIP地址:{{CarIp}}</p>
 	<p class = "text item">实时CO2浓度:{{CO2}}</p>
 	<p class = "text item">实时TVOC浓度:{{TVOC}}</p>
-	<p class = "text item">最后更新时间:{{Time}}</p>
+	<div >最后更新时间:{{Time}}</div>
 
   </el-card>
   </div>

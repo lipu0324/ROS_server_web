@@ -18,7 +18,7 @@ function onSubmit(form) {
 	  "car_id" : form.car_id,
 	  "CarAddress" : form.CarAddress,
 	}
-	axios.post(serverURL + "/api/get_history_data/", data).then(function (response) {
+	axios.post(serverURL + "/api/get_history_data", data).then(function (response) {
 
 	})
 }

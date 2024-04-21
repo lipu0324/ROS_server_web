@@ -4,7 +4,7 @@
 	<el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
 			 background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
 	  <RouterLink to="/CarView" class="custom-link">
-		<el-menu-item index="1">
+		<el-menu-item index="1" class="custom-link" >
 		  <i class="el-icon-menu"></i>
 		  主页
 		</el-menu-item>
@@ -22,7 +22,7 @@
 	  </el-menu-item>
 	  </RouterLink>
 	  <RouterLink to="/settings" class="custom-link">
-		<el-menu-item index="3">
+		<el-menu-item index="3" class="custom-link" >
 		  <i class="el-icon-setting"></i>
 		  系统设置
 		</el-menu-item>
@@ -66,6 +66,7 @@ export default {
   word-spacing: inherit;
   white-space: inherit;
   text-decoration: inherit;
+  background-color: #545c64 ;
   /* 左对齐 */
   text-align: left;
 }
