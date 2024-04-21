@@ -7,7 +7,7 @@ import  settings from '@/settings.json';
 const serverWeb = settings.serverURL;
 const fetched = ref(null);
 const CarID = ref(null);
-
+const CarIP = ref(null);
 onMounted (() => {
   axios.get(serverWeb+'/api/get_car_info').then(response => {
 	fetched.value = response.data;
@@ -17,17 +17,24 @@ onMounted (() => {
 })
 
 function RegistCar() {
-	  axios.post(serverWeb+'/api/regist_car',{carID:  CarID.value}).then((response)=>{
-		const statusCode = response.status;
-		if(statusCode === 200){
-		  ElMessage("车辆添加成功")
-		}
-		else if(statusCode !== 200){
-		  ElMessage("车辆添加失败")
-		}
-	  }).catch((error)=>{
-		ElMessage("车辆添加失败");
-	  });
+	  // 判断输入是否为空
+  console.log("点击了")
+  console.log(CarID,CarIP)
+  if(CarID.value == null || CarIP.value == null){
+	ElMessage("请输入车辆编号与车辆IP");
+  }
+  else {
+	axios.post(serverWeb + '/api/regist_car', {carID: CarID.value, carIP: CarIP.value}).then((response) => {
+	  const statusCode = response.status;
+	  if (statusCode === 200) {
+		ElMessage("车辆添加成功")
+	  } else if (statusCode !== 200) {
+		ElMessage("车辆添加失败")
+	  }
+	}).catch((error) => {
+	  ElMessage("车辆添加失败");
+	});
+  }
 }
 
 </script>
@@ -41,11 +48,16 @@ function RegistCar() {
 		  v-model="CarID"
 		  placeholder="请输入车辆编号"
 	  />
-	  <el-button @click="RegistCar">提交</el-button>
+	<el-input
+	  type = "text"
+	  v-model="CarIP"
+	  placeholder="请输入车辆IP"/>
+	  <el-button @click="RegistCar" type="primary">提交</el-button>
   </el-form>
+	<p></p>
   </el-container>
 	<el-container class = "car-info">
-  <car-setting class="car-info"
+  	<car-setting class="car-info"
 	  v-for = "(item,index) in fetched"
 	  :key="item.car_id"
 	  :CarId="item.car_id"
@@ -72,9 +84,8 @@ function RegistCar() {
 .form-item-top {
   display: flex;
   align-items: center; /* 垂直居中 */
-  flex-direction: column;
-  margin-bottom: 20px; /* 根据需要调整外边距 */
-  max-height: 70px;
+  flex-direction: column; /* 根据需要调整外边距 */
+  max-height: 120px;
 }
 </style>
 
