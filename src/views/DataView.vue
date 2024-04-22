@@ -6,8 +6,8 @@ import settings from '@/settings.json'
 const serverURL = settings.serverURL
 // 创建一个名为form 的ref数组
 const form = ref({
-  car_id: "",
-  timeRange: [],
+  car_id:"",
+  timeRange: ["",""],
   CarAddress: "",
 })
 const DataResult = ref([])
@@ -18,8 +18,9 @@ function onSubmit(form) {
 	  "car_id" : form.car_id,
 	  "CarAddress" : form.CarAddress,
 	}
-	axios.post(serverURL + "/api/get_history_data", data).then(function (response) {
-
+	axios.post(serverURL + "/api/get_history_data/", data).then(function (response) {
+	  DataResult.value = response.data
+	  console.log(DataResult.value)
 	})
 }
 
@@ -46,12 +47,12 @@ function onSubmit(form) {
 	</el-form-item>
   </el-form>
   <el-container>
-	<el-table :data="DataResult" border style="width: 80%" stripe>
-	  <el-table-column prop = "car_id" label = "车辆ID" width = "180"/>
-	  <el-table-column prop = "co2" label = "CO2数据" width = "180"/>
-	  <el-table-column prop = "TVOC" label = "TVOC数据" width = "180"/>
-	  <el-table-column prop = "location" label = "地址" width = "180"/>
-	  <el-table-column prop = "time" label = "时间" width = "180"/>
+	<el-table  :data="DataResult" border stripe :fit = "true">
+	  <el-table-column prop = "car_id" label = "车辆ID"/>
+	  <el-table-column prop = "co2" label = "CO2数据" />
+	  <el-table-column prop = "tvoc" label = "TVOC数据" />
+	  <el-table-column prop = "place" label = "地址" width />
+	  <el-table-column prop = "time" label = "时间"/>
 	</el-table>
   </el-container>
 </template>

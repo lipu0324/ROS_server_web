@@ -24,7 +24,7 @@
 	  <RouterLink to="DataView" class="custom-link">
 		<el-menu-item index="3" class="custom-link" >
 		  <i class="el-icon-setting"></i>
-		  系统设置
+		  历史信息查询
 		</el-menu-item>
 	  </RouterLink>
 	</el-menu>
