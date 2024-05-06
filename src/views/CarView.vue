@@ -32,7 +32,7 @@ onMounted(() => {
 	  >
 	  </car-info>
 	  <el-button>
-		<a :href="'http://'+item.car_ip" target="_blank" style="color: black;text-decoration: none">进入车辆控制页面</a>
+		<a :href="'http://'+item.car_ip+':8081'" target="_blank" style="color: black;text-decoration: none">进入车辆控制页面</a>
 	  </el-button>
 	</div>
   </el-container>
